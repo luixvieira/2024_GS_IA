@@ -9,7 +9,9 @@ modelo_clusterizacao_paises.pkl: Arquivo contendo o modelo de Clusterização (K
 Como Funciona
 O servidor Flask possui três endpoints principais para cada um dos modelos. Cada endpoint aceita uma solicitação POST com dados em formato JSON e retorna uma previsão ou classificação.
 
-Endpoints
+Endpoints:
+
+
 /prever_co2
 
 Descrição: Utiliza o modelo de regressão para prever as emissões de CO₂ de um país.
@@ -29,10 +31,13 @@ Copiar código
 Resposta:
 previsao_co2: (float) Valor previsto das emissões de CO₂.
 json
-Copiar código
+Deve retornar algo como:
+
 {
   "previsao_co2": 12345.67
 }
+
+
 /classificar_progresso
 
 Descrição: Utiliza o modelo de classificação para categorizar o progresso de um país em eficiência energética.
@@ -52,10 +57,12 @@ Copiar código
 Resposta:
 classe_progresso: (int) Classificação do progresso do país (0 = Baixo Progresso, 1 = Alto Progresso).
 json
-Copiar código
+Deve retornar algo como:
+
 {
   "classe_progresso": 1
 }
+
 /cluster_pais
 
 Descrição: Utiliza o modelo de clusterização para identificar o cluster de um país.
@@ -75,7 +82,8 @@ Copiar código
 Resposta:
 cluster: (int) Cluster ao qual o país pertence (0, 1 ou 2).
 json
-Copiar código
+Deve retornar algo como:
+
 {
   "cluster": 2
 }
